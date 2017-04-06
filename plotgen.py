@@ -20,7 +20,7 @@ plt.title('Women')
 questA.Si_F.plot.bar(position=2, color="green", width=0.25)
 questA.No_F.plot.bar(position=1, color="red", width=0.25)
 questA.A_volte_F.plot.bar(position=0, color="yellow", width=0.25)
-
+plt.axis([-1, 20, 0, 50])
 ### LEGEND ###
 green_patch = mpatches.Patch(color="green", label="Si")
 
@@ -49,7 +49,7 @@ plt.show()
 questA.Si_M.plot.bar(position=2, color="blue", width=0.25)
 questA.No_M.plot.bar(position=1, color="black", width=0.25)
 questA.A_volte_M.plot.bar(position=0, color="grey", width=0.25)
-
+plt.axis([-1, 20, 0, 50])
 
 ### LEGEND ###
 black_patch = mpatches.Patch(color="black", label="No")
@@ -73,7 +73,7 @@ plt.figure()
 questA.Si_A.plot.bar(position=0, color="blue", rot=0, width=0.25)
 questA.No_A.plot.bar(position=1, color="black", width=0.25)
 questA.A_volte_A.plot.bar(position=2, color="grey", width=0.25)
-
+plt.axis([-1, 20, 0, 97])
 ##### LEGEND ###
 black_patch = mpatches.Patch(color="black", label="No")
 ##
@@ -90,12 +90,14 @@ plt.show()
 ##### HORIZONTAL BAR #####
 ##########################
 plt.figure()
+
 plt.subplot(121).invert_xaxis()
 plt.title('Men')
-questA.Si_M.plot.barh(position=2, color="blue", width=0.25)
-questA.No_M.plot.barh(position=0, color="black", width=0.25)
-questA.A_volte_M.plot.barh(position=1, color="c", width=0.25)
 
+questA.Si_M.plot.barh(position=0, color="blue", width=0.25)
+questA.No_M.plot.barh(position=2, color="black", width=0.25)
+questA.A_volte_M.plot.barh(position=1, color="c", width=0.25)
+plt.tight_layout()
 green_patch = mpatches.Patch(color="green", label="Si")
 
 yellow_patch =mpatches.Patch(color="yellow", label="A volte")
@@ -115,12 +117,13 @@ cur_axes.axes.get_yaxis().set_visible(False)
 
 plt.subplot(122)
 plt.title('Women')
-questA.Si_F.plot.barh(position=2, color="green", width=0.25)
-questA.No_F.plot.barh(position=0, color="red", width=0.25)
+questA.Si_F.plot.barh(position=0, color="green", width=0.25)
+questA.No_F.plot.barh(position=2, color="red", width=0.25)
 questA.A_volte_F.plot.barh(position=1, color="orange", width=0.25)
-
-plt.subplots_adjust(wspace=0.10)
 plt.tight_layout()
+#plt.axis([0, 50, -1, 20])
+plt.subplots_adjust(wspace=0.10)
+
 
 plt.show()
 

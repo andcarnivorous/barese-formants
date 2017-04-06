@@ -162,6 +162,7 @@ def superplot():
     (df4.SIUF * 100 / df3.ix[2, 'Tot_U_F']).plot.bar(width=0.25, position=1)
     (df4.NOUF * 100 / df3.ix[2, 'Tot_U_F']).plot.bar(width=0.25, position=2, color='r')
 
+    plt.tight_layout()
     plt.show()
 
     ### Pie Chart Positive/Negative Attitude Towards Dialect ###
